@@ -126,6 +126,7 @@ colnames(costRFEff)[c(1)] <- "wtA"
 costRFEff$COSTA <- (costRFEff$wt*costRt)
 costRFEff$RFB <- ((1-costRFEff$wt)*rfRt)
 costRFEff$portRt <- (costRFEff$wt*costRt) + ((1-costRFEff$wt)*rfRt)
+
 costRFEff$portSd <- (costRFEff$wtA * sd(costRFEff$COSTA))^2 + ((1 - costRFEff$wtA) * sd(costRFEff$RFB))^2 + (2*(costRFEff$wtA)*(1- costRFEff$wtA)*sd(costRFEff$COSTA)*sd(costRFEff$RFB)* cor(costRFEff$COSTA,costRFEff$RFB))
 
 #Plot Eff Front
